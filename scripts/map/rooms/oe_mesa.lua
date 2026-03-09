@@ -13,9 +13,13 @@ AddRoom("BGMesa",
         distributepercent = 0.15,
         distributeprefabs =
         {
-            houndbone         = 0.40,
-            marsh_bush        = 0.30,
-            flower_withered   = 0.30,
+            houndbone                   = 0.40,
+            marsh_bush                  = 0.30,
+            flower_withered             = 0.40,
+            oe_mesa_cactus_small       = 0.10,
+            oe_mesa_agave_bush         = 0.20,
+            -- Clay only on MESA_CRACKED ? Hm....
+            oe_mesa_rock_clay          = 0.10,
             -- TO DO:
             -- mesa_rock      = 0.60,
             -- mesa_formation = 0.50,
@@ -24,11 +28,13 @@ AddRoom("BGMesa",
     }
 })
 
+
 -- Lots of rocks and fossils, formations occasionally, no trees and cacti.
+-- GLOOMS: Cracked should have the big rock formations, we will keep the "shorter" stuff for the lower priority / less saturated turfs
 AddRoom("MesaRocky", 
 {
     colour   = { r = 0.30, g = 0.20, b = 0.10, a = 0.30 },
-    value    = WORLD_TILES.OE_MESA_ROCKY,
+    value    = WORLD_TILES.OE_MESA_CRACKED,
     tags     = { "RoadPoison", "Astral_1" },
     level_set_piece_blocker = true,
     contents =
@@ -41,9 +47,13 @@ AddRoom("MesaRocky",
         distributepercent = 0.10,
         distributeprefabs =
         {
-            rock_flintless       = 1.00,
-            rock2                = 0.40,
-            houndbone            = 0.30,
+            rock_flintless          = 1.00,
+            rock2                   = 0.40,
+            houndbone               = 0.30,
+            oe_mesa_rock_clay          = 0.40,
+            oe_mesa_pillar_rock        = 0.20,
+            --mesa_pillar_stalactite  = 0.20, -- Won't make sense without a canopy
+
             -- TO DO:
             -- mesa_rock         = 0.80,
             -- mesa_fossil_beast = 0.60,
@@ -57,7 +67,7 @@ AddRoom("MesaRocky",
 AddRoom("MesaPlains",
 {
     colour   = { r = 0.30, g = 0.20, b = 0.10, a = 0.30 },
-    value    = WORLD_TILES.OE_MESA_SAND_ORANGE,
+    value    = WORLD_TILES.OE_MESA_SAND_CREAM,
     tags     = { "RoadPoison" },
     level_set_piece_blocker = true,
     contents =
@@ -70,9 +80,11 @@ AddRoom("MesaPlains",
         distributepercent = 0.10,
         distributeprefabs =
         {
-            marsh_bush        = 0.50,
-            sapling           = 0.40,
-            flower_withered   = 0.40,
+            marsh_bush          = 0.50,
+            sapling             = 0.40,
+            flower_withered     = 0.40,
+            oe_mesa_agave_bush     = 0.30,
+            oe_mesa_cactus_small   = 0.10,
             -- TO DO:
             -- mesa_cactus    = 0.30,
             -- mesa_formation = 0.20,
@@ -80,11 +92,12 @@ AddRoom("MesaPlains",
     }
 })
 
+-- GLOOMS: Mesa is too big imo, I don't think we need this.
 -- Trees and plants on the outside, empty in the middle.
 AddRoom("MesaClearing", 
 {
     colour   = { r = 0.30, g = 0.20, b = 0.10, a = 0.30 },
-    value    = WORLD_TILES.OE_MESA_SAND_PEACH,
+    value    = WORLD_TILES.SAVANNA,
     tags     = { "RoadPoison" },
     level_set_piece_blocker = true,
     contents =
@@ -106,10 +119,11 @@ AddRoom("MesaClearing",
 })
 
 -- Lots of trees and plants, formation occasionally, no rocks and fossils.
+-- GLOOMS: Testing this as being a forest "under" large rocks (canyon).
 AddRoom("MesaForest", 
 {
     colour   = { r = 0.30, g = 0.20, b = 0.10, a = 0.30 },
-    value    = WORLD_TILES.OE_MESA_SAND_PINK,
+    value    = WORLD_TILES.GRASS,
     tags     = { "RoadPoison", "Astral_2" },
     level_set_piece_blocker = true,
     contents =
@@ -118,11 +132,14 @@ AddRoom("MesaForest",
         distributeprefabs =
         {
             -- TO DO: Replace with mesa trees.
-            trees             = { weight = 3, prefabs = { "evergreen", "evergreen_sparse" } },
-            marsh_bush        = 0.40,
-            houndbone         = 0.30,
-            ground_twigs      = 0.25,
-            fireflies         = 0.20,
+            trees                       = { weight = 3, prefabs = { "evergreen", "evergreen_sparse" } },
+            marsh_bush                  = 0.40,
+            houndbone                   = 0.30,
+            ground_twigs                = 0.25,
+            fireflies                   = 0.20,
+            oe_mesa_pillar_tree            = 0.20,
+            oe_mesa_pillar_stalactite      = 0.20,
+            --mesa_cactus_small    = 0.40,
             -- TO DO:
             -- mesa_cactus    = 0.40,
             -- mesa_formation = 0.20,
@@ -130,11 +147,14 @@ AddRoom("MesaForest",
     }
 })
 
+-- GLOOMS:
 -- Archeologist's Dig Site Setpiece.
+-- Keep the foundation turf Pebble Beige and we will do Sand Brown in Tiled for the setpiece
+-- Also a boon w/ an Archeologist's set (shovel, etc)
 AddRoom("MesaDigSite", 
 {
 	colour   = { r = 0.30, g = 0.20, b = 0.10, a = 0.30 },
-    value    = WORLD_TILES.OE_MESA_SAND_CREAM,
+    value    = WORLD_TILES.OE_MESA_PEBBLE_BEIGE,
     tags     = { "RoadPoison", "ExitPiece" },
     level_set_piece_blocker = true,
     contents =  
@@ -148,12 +168,14 @@ AddRoom("MesaDigSite",
         distributepercent = 0.30,
         distributeprefabs =
         {
-            sapling           = 0.70,
-            houndbone         = 0.30,
-            rock2             = 0.30,
-            flint             = 0.20,
-            fireflies         = 0.20,
-            ground_twigs      = 0.05,
+            sapling             = 0.70,
+            houndbone           = 0.30,
+            rock2               = 0.30,
+            fossil_piece        = 0.20,
+            fireflies           = 0.20,
+            fossil_stalker      = 0.05,
+            oe_mesa_flipping_rock  = 0.30,
+            --mesa_cactus_small    = 0.40,
             -- TO DO:
             -- mesa_rock      = 0.60,
             -- mesa_cactus    = 0.30,

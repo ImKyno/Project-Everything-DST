@@ -1,1 +1,13 @@
-<Atlas><Texture filename="oe_inventoryimages.tex" /><Elements><Element name="oe_mesa_clay.tex" u1="0.0078125" u2="0.9921875" v1="0.0078125" v2="0.9921875" /></Elements></Atlas>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Atlas>
+	<Texture filename="oe_inventoryimages.tex" />
+	<Elements>
+		<Element name="mesa_agave_bush_dug.tex" u1="0.001" u2="0.249" v2="0.999" v1="0.501" variant="" />
+		<Element name="mesa_agave_nectar.tex" u1="0.251" u2="0.499" v2="0.999" v1="0.501" variant="" />
+		<Element name="mesa_clay.tex" u1="0.001" u2="0.249" v2="0.499" v1="0.001" variant="" />
+		<Element name="mesa_cracked.tex" u1="0.251" u2="0.499" v2="0.499" v1="0.001" variant="" />
+		<Element name="mesa_pebble_beige.tex" u1="0.501" u2="0.749" v2="0.999" v1="0.501" variant="" />
+		<Element name="mesa_sand_brown.tex" u1="0.751" u2="0.999" v2="0.999" v1="0.501" variant="" />
+		<Element name="mesa_sand_cream.tex" u1="0.501" u2="0.749" v2="0.499" v1="0.001" variant="" />
+	</Elements>
+</Atlas>

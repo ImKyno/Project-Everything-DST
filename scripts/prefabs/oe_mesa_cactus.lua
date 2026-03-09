@@ -133,9 +133,9 @@ local function fn()
     -- TO DO: World Customization.
     -- WorldSettings_Pickable_RegenTime(inst, TUNING.OE_MESA_CACTUS_SMALL_REGROW_TIME)
     inst.components.pickable:SetUp("cactus_meat", TUNING.OE_MESA_CACTUS_SMALL_REGROW_TIME)
-    inst.components.pickable.onregenfn = OnRegen
-    inst.components.pickable.onpickedfn = OnPicked
-    inst.components.pickable.makeemptyfn = OnEmpty
+    inst.components.pickable.onregenfn      = OnRegen
+    inst.components.pickable.onpickedfn     = OnPicked
+    inst.components.pickable.makeemptyfn    = OnEmpty
 
     -- inst.OnPreLoad = OnPreLoad
     inst.OnEntityWake = OnEntityWake
